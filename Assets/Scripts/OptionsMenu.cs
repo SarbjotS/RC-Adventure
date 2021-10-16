@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
-    public GameObject mainMenu, optionsMenu;
+    public GameObject mainMenu, optionsMenu, howToPlayMenu;
     public Slider volumeSlider;
 
     public void back()
     {
         optionsMenu.SetActive(false);
+        howToPlayMenu.SetActive(false);
         mainMenu.SetActive(true);
     }
 
