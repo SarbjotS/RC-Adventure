@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class characterAndEnviroment : MonoBehaviour
@@ -50,6 +51,18 @@ public class characterAndEnviroment : MonoBehaviour
             }
             Debug.Log(SelectedV);
         }
+    }
+    public void playGame()
+    {
+        if (SelectedV == 1)
+        {
+            PlayerPrefs.SetInt("ChosenCar", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("ChosenCar", 2);
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     //Just need to instantiate in next scene depending on click
