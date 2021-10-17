@@ -19,7 +19,7 @@ public class VictoryLine : MonoBehaviour
 
     public void AddScore()
     {
-        Score = Score + scoreModifier;
+        Score = Score + scoreModifier; //is called by collision script
         //Debug.Log("Score Added or Detracted");
     }
 
