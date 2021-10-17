@@ -7,13 +7,11 @@ using UnityEngine.UI;
 public class TimeAndCollect : MonoBehaviour
 {
     public Text TimerText;
-    float tim;
+    public float tim;
 
     void Start()
     {
-        tim -= Time.time;
         TimerText.text = tim.ToString();
-        tim += Time.time;
     }
 
     // Update is called once per frame
@@ -22,7 +20,7 @@ public class TimeAndCollect : MonoBehaviour
        
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
-            tim = Time.time;
+            tim = Time.timeSinceLevelLoad;
             TimerText.text = tim.ToString();
 
         }
@@ -30,6 +28,10 @@ public class TimeAndCollect : MonoBehaviour
         {
             TimerText.text = "0";
         }
+        if (Input.GetKeyDown(KeyCode.Escape)){
+            //tim-=Time.time;
+        }
+        
     }
 
     public float GetTimer()

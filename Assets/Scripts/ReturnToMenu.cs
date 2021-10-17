@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ReturnToMenu : MonoBehaviour
 {
+    public TimeAndCollect ti;
     
     // Update is called once per frame
     void Update()
@@ -17,6 +18,7 @@ public class ReturnToMenu : MonoBehaviour
 
     void PressToContinue()
     {
+        //ti.tim-= Time.time;
         SceneManager.LoadScene(0, LoadSceneMode.Single);
     }
 }
