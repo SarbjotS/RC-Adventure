@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class VictoryLine : MonoBehaviour
 {
@@ -19,14 +18,10 @@ public class VictoryLine : MonoBehaviour
     {
         VictoryText.SetActive(true);
         TimeTaken = Timer.GetTimer();
-        Score = 12000 - (TimeTaken*100);
-        scoreText.text = "Score: " + Score.ToString() + "Test!";
+        Score = 12000.0f - (TimeTaken*100.0f);
+        scoreText.text = Score.ToString();
         ScoreContainer.SetActive(true);
         ContinueButton.SetActive(true);
-    }
-
-    public void PressToContinue()
-    {
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        Destroy(this.gameObject);
     }
 }
