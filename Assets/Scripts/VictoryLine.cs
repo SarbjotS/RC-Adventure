@@ -18,13 +18,20 @@ public class VictoryLine : MonoBehaviour
     public float scoreModifier = 0;
     void OnTriggerEnter()
     {
+<<<<<<< Updated upstream
         VictoryText.SetActive(true);
         TimeTaken = Timer.GetTimer();
         Score = 12000.0f - (TimeTaken*100.0f);
         Score += scoreModifier;
         scoreText.text = Score.ToString();
+=======
+        VictoryText.SetActive(true); //reveal UI
+        TimeTaken = Timer.GetTimer(); //get Time from the Timer script
+        Score = 12000.0f - (TimeTaken*100.0f); //calculate score
+        scoreText.text = Score.ToString(); //display score
+>>>>>>> Stashed changes
         ScoreContainer.SetActive(true);
-        ContinueButton.SetActive(true);
-        Destroy(this.gameObject);
+        ContinueButton.SetActive(true); //reveal rest of UI
+        Destroy(this.gameObject); //destroy object to ensure it doesn't repeat
     }
 }
