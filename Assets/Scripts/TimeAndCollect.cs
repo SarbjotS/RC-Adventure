@@ -32,4 +32,9 @@ public class TimeAndCollect : MonoBehaviour
             TimerText.text = "0";
         }
     }
+
+    public float GetTimer()
+    {
+        return tim;
+    }
 }
