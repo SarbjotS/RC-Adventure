@@ -14,6 +14,7 @@ public class characterAndEnviroment : MonoBehaviour
     int SelectedV = 0;
     public Text LamboT;
     public Text TruckT;
+    private GameObject musicObject;
     private float r, g, b;
      
 
@@ -35,18 +36,13 @@ public class characterAndEnviroment : MonoBehaviour
                 {
                     SelectedV = 1;
                     TruckT.gameObject.SetActive(true);
-                    LamboT.gameObject.SetActive(true);
-                    LamboT.text = "Increased handling at cost of speed";
-                    TruckT.text = "Truck";
+                    LamboT.gameObject.SetActive(false);
                 }
                 else if (select.transform.tag == "Lambo")
                 {
                     SelectedV = 2;
                     LamboT.gameObject.SetActive(true);
-                    TruckT.gameObject.SetActive(true);
-                    TruckT.text = "Increased speed at cost of handling";
-                    LamboT.text = "Lambo";
-
+                    TruckT.gameObject.SetActive(false);
                 }
             }
             Debug.Log(SelectedV);
@@ -62,6 +58,8 @@ public class characterAndEnviroment : MonoBehaviour
         {
             PlayerPrefs.SetInt("ChosenCar", 2);
         }
+        musicObject = GameObject.FindWithTag("Music");
+        Destroy(musicObject);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
