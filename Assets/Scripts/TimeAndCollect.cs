@@ -24,7 +24,6 @@ public class TimeAndCollect : MonoBehaviour
         {
             tim = Time.time;
             TimerText.text = tim.ToString();
-            Debug.Log(SceneManager.GetActiveScene().buildIndex);
 
         }
         else

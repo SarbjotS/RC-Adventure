@@ -5,11 +5,20 @@ using UnityEngine;
 public class CollisionDetection : MonoBehaviour
 {
     // Start is called before the first frame update
+    public VictoryLine Score; 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "flags")
+        
+        if (other.tag == "Flags")
         {
-            Debug.Log("Hey");
+            Score.scoreModifier = 10000000000;
+            Destroy(other.gameObject);
+        }else if(other.tag == "Cone")
+        {
+            Destroy(other.gameObject);
+        }else if( other.gameObject.tag == "Pothole")
+        {
+            Destroy(other.gameObject);
         }
     }
 }

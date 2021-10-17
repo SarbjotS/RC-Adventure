@@ -11,26 +11,20 @@ public class VictoryLine : MonoBehaviour
     public GameObject ContinueButton;
     public GameObject ScoreContainer;
     public Text scoreText;
+    
 
     private float TimeTaken = 0.0f;
     private float Score = 0.0f;
-
+    public float scoreModifier = 0;
     void OnTriggerEnter()
     {
         VictoryText.SetActive(true);
         TimeTaken = Timer.GetTimer();
         Score = 12000.0f - (TimeTaken*100.0f);
+        Score += scoreModifier;
         scoreText.text = Score.ToString();
         ScoreContainer.SetActive(true);
         ContinueButton.SetActive(true);
         Destroy(this.gameObject);
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "flags")
-        {
-            Debug.Log("Hey");
-        }
-    }       
 }
